@@ -1,4 +1,4 @@
-package com.anelfer.rafra.pages;
+package com.anelfer.rafra.data;
 
 import lombok.Getter;
 import lombok.Setter;

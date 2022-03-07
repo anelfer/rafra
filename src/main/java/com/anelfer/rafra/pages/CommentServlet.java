@@ -1,4 +1,4 @@
-package com.anelfer.rafra;
+package com.anelfer.rafra.pages;
 
 import com.anelfer.rafra.core.controller.PostController;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/h")
-public class RafraServlet extends HttpServlet {
+@WebServlet("/comments")
+public class CommentServlet extends HttpServlet {
 
     private final PostController controller = new PostController();
 

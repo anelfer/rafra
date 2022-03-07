@@ -1,7 +1,7 @@
 package com.anelfer.rafra.core.reader;
 
-import com.anelfer.rafra.pages.Comment;
-import com.anelfer.rafra.pages.Post;
+import com.anelfer.rafra.data.Comment;
+import com.anelfer.rafra.data.Post;
 
 import java.util.List;
 

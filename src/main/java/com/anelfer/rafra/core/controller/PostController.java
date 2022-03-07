@@ -19,13 +19,13 @@ public class PostController implements Controller {
         PostsView view = new PostsView(model);
         response.setContentType("text/html; charset=utf-8");
         PrintWriter printWriter = response.getWriter();
-        printWriter.write(view.render("Тут посты"));
+        printWriter.write(view.render("Тут посты", "style"));
         printWriter.close();
     }
 
     @Override
     public void executePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.sendRedirect("/h");
+        response.sendRedirect("/posts");
         PostModel model = new PostModel(reader);
         model.addPost(request.getParameter("title"), request.getParameter("text"), request.getParameter("author"));
     }

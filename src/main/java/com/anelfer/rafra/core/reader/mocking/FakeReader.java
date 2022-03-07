@@ -1,8 +1,8 @@
 package com.anelfer.rafra.core.reader.mocking;
 
 import com.anelfer.rafra.core.reader.DataReader;
-import com.anelfer.rafra.pages.Comment;
-import com.anelfer.rafra.pages.Post;
+import com.anelfer.rafra.data.Comment;
+import com.anelfer.rafra.data.Post;
 
 import java.util.ArrayList;
 import java.util.List;
