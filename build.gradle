@@ -3,6 +3,7 @@ plugins {
     id 'java'
 }
 
+compileJava.options.encoding = "UTF-8"
 group 'com.anelfer'
 version '1.0-SNAPSHOT'
 

@@ -1,0 +1,23 @@
+
+h1 {
+    color: aqua;
+}
+
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+}
+
+.post {
+    width: 150px;
+}
+
+.title {
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.block {
+    display: flex;
+}

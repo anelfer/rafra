@@ -1,6 +1,6 @@
 package com.anelfer.rafra;
 
-import com.anelfer.rafra.core.controller.HomeController;
+import com.anelfer.rafra.core.controller.PostController;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,19 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/")
+@WebServlet("/h")
 public class RafraServlet extends HttpServlet {
 
-    private final HomeController controller = new HomeController();
+    private final PostController controller = new PostController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        controller.execute(resp);
+        controller.executeGet(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        controller.executePost(req, resp);
     }
 
 }
