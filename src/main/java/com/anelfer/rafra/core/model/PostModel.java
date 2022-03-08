@@ -6,36 +6,26 @@ import com.anelfer.rafra.data.Post;
 
 import java.util.List;
 
-public class PostModel implements Model {
+public class PostModel extends Model {
 
     private final DataReader reader;
+    private final int postId;
 
-    public PostModel(DataReader reader) {
-        this.reader = reader;
+    public PostModel(DataReader instance, int id) {
+        this.reader = instance;
+        this.postId = id;
     }
 
-    @Override
-    public String getPage() {
-        return "abobus";
+    public Post getPost() {
+        return reader.getPost(postId);
     }
 
-    @Override
-    public void addPost(String title, String author, String text) {
-        reader.addPost(new Post(title, author, text));
-    }
-
-    @Override
     public void addComment(String author, String text) {
         reader.addComment(new Comment(author, text));
     }
 
-    @Override
     public List<Comment> getComments() {
         return reader.getComments();
     }
 
-    @Override
-    public List<Post> getPosts() {
-        return reader.getPosts();
-    }
 }

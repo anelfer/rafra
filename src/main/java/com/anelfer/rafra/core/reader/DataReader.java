@@ -11,6 +11,8 @@ public interface DataReader {
 
     List<Post> getPosts();
 
+    Post getPost(int id);
+
     void addPost(Post post);
 
     void addComment(Comment comment);

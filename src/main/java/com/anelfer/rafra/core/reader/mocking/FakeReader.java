@@ -6,9 +6,11 @@ import com.anelfer.rafra.data.Post;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FakeReader implements DataReader {
 
+    public static FakeReader instance = new FakeReader();
     private final List<Comment> comments = new ArrayList<>();
     private final List<Post> posts = new ArrayList<>();
 
@@ -27,6 +29,11 @@ public class FakeReader implements DataReader {
     @Override
     public List<Post> getPosts() {
         return this.posts;
+    }
+
+    @Override
+    public Post getPost(int id) {
+        return posts.stream().filter(post -> post.getId() == id).collect(Collectors.toList()).get(0);
     }
 
     @Override

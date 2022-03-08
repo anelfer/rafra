@@ -1,6 +1,6 @@
 package com.anelfer.rafra.pages;
 
-import com.anelfer.rafra.core.controller.PostController;
+import com.anelfer.rafra.core.controller.PostsController;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +11,7 @@ import java.io.IOException;
 @WebServlet(name="posts",urlPatterns={"/posts"})
 public class PostsServlet extends HttpServlet {
 
-    private final PostController controller = new PostController();
+    private final PostsController controller = new PostsController();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {

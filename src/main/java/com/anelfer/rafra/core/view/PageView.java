@@ -10,7 +10,7 @@ public abstract class PageView {
         return "<head>" +
                 "<meta charset=\"UTF-8\">" +
                 "<title>" + title + "</title>" +
-                "<link rel=\"stylesheet\" type=\"text/css\" href=\"./css/" + css + ".css\">" +
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/" + css + ".css\">" +
                 "</head>";
     }
 
