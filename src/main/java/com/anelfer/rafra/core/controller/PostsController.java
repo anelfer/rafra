@@ -25,6 +25,7 @@ public class PostsController implements Controller {
     public void executePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.sendRedirect("/posts");
         PostsModel model = new PostsModel(FakeReader.instance);
+        request.setCharacterEncoding("UTF-8");
         model.addPost(request.getParameter("title"), request.getParameter("text"), request.getParameter("author"));
     }
 

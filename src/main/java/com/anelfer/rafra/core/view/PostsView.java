@@ -26,7 +26,7 @@ public class PostsView extends PageView {
             builder.append("</div></a>\n");
         }
         builder.append("</div>");
-        builder.append("<form class=\"form_post\" action=\"/posts\" method=\"post\">\n" +
+        builder.append("<form accept-charset=\"UTF-8\" class=\"form_post\" action=\"/posts\" method=\"post\">\n" +
                 "    <input type=\"text\" name=\"title\" value=\"John\"><br><br>\n" +
                 "    <input type=\"text\" name=\"text\" value=\"John\"><br><br>\n" +
                 "    <input type=\"text\" name=\"author\" value=\"John\"><br><br>\n" +
