@@ -17,6 +17,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+    implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'
 
     testImplementation 'junit:junit:4.13.2'
     testCompileOnly 'org.projectlombok:lombok:1.18.22'

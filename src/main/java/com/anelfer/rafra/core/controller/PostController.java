@@ -1,5 +1,6 @@
 package com.anelfer.rafra.core.controller;
 
+import com.anelfer.rafra.core.Route;
 import com.anelfer.rafra.core.model.PostModel;
 import com.anelfer.rafra.core.reader.mocking.FakeReader;
 import com.anelfer.rafra.core.view.PostView;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@Route("/post/.*")
 public class PostController implements Controller {
 
     @Override

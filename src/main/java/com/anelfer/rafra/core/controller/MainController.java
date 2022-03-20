@@ -1,5 +1,6 @@
 package com.anelfer.rafra.core.controller;
 
+import com.anelfer.rafra.core.Route;
 import com.anelfer.rafra.core.view.MainView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@Route()
 public class MainController implements Controller {
 
     @Override

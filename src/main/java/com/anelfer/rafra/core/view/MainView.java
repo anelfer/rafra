@@ -1,12 +1,11 @@
 package com.anelfer.rafra.core.view;
 
 public class MainView extends PageView {
+
     @Override
     public String showContent() {
-        StringBuilder builder = new StringBuilder();
-
-        builder.append("<div class=\"fm_wrapper\"><h1 class=\"fm_name\"> Rafra MVC Framework </h1></div>");
-        builder.append("<input type=\"checkbox\" id=\"ham-menu\">\n" +
+        return "<div class=\"fm_wrapper\"><h1 class=\"fm_name\"> Rafra MVC Framework </h1></div>" +
+                "<input type=\"checkbox\" id=\"ham-menu\">\n" +
                 "<label for=\"ham-menu\">\n" +
                 "  <div class=\"hide-des\">\n" +
                 "    <span class=\"menu-line\"></span>\n" +
@@ -25,8 +24,6 @@ public class MainView extends PageView {
                 "    <li><a href=\"comments\">Comments</a></li>\n" +
                 "\n" +
                 "  </ul>\n" +
-                "</div>");
-
-        return builder.toString();
+                "</div>";
     }
 }
