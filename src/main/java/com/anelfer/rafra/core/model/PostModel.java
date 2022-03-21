@@ -1,31 +1,24 @@
 package com.anelfer.rafra.core.model;
 
-import com.anelfer.rafra.core.reader.DataReader;
-import com.anelfer.rafra.data.Comment;
-import com.anelfer.rafra.data.Post;
+import lombok.Getter;
+import lombok.Setter;
 
-import java.util.List;
-
+@Getter
+@Setter
 public class PostModel extends Model {
 
-    private final DataReader reader;
-    private final int postId;
+    private static int idCounter = 1;
+    private int id;
+    private String title;
+    private String author;
+    private String text;
+    private int views;
 
-    public PostModel(DataReader instance, int id) {
-        this.reader = instance;
-        this.postId = id;
-    }
-
-    public Post getPost() {
-        return reader.getPost(postId);
-    }
-
-    public void addComment(String author, String text) {
-        reader.addComment(new Comment(author, text));
-    }
-
-    public List<Comment> getComments() {
-        return reader.getComments();
+    public PostModel(String title, String author, String text) {
+        this.id = idCounter++;
+        this.title = title;
+        this.author = author;
+        this.text = text;
     }
 
 }

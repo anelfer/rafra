@@ -4,9 +4,9 @@
     <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
     <option name="UPDATING_POLICY" value="restart-server" />
     <deployment>
-      <artifact name="rafraT.main:war exploded">
+      <artifact name="Gradle : com.anelfer : rafraT-1.0-SNAPSHOT.war (exploded)">
         <settings>
-          <option name="CONTEXT_PATH" value="/" />
+          <option name="CONTEXT_PATH" value="" />
         </settings>
       </artifact>
     </deployment>
@@ -118,6 +118,7 @@
       <option name="Make" enabled="true" />
       <option name="BuildArtifacts" enabled="true">
         <artifact name="rafraT.main:war exploded" />
+        <artifact name="Gradle : com.anelfer : rafraT-1.0-SNAPSHOT.war (exploded)" />
       </option>
     </method>
   </configuration>

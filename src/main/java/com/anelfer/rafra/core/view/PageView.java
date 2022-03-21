@@ -19,4 +19,5 @@ public abstract class PageView {
     }
 
     public abstract String showContent();
+
 }

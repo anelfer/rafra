@@ -1,7 +1,7 @@
 package com.anelfer.rafra.core.view;
 
+import com.anelfer.rafra.core.model.PostModel;
 import com.anelfer.rafra.core.model.PostsModel;
-import com.anelfer.rafra.data.Post;
 
 public class PostsView extends PageView {
 
@@ -16,7 +16,7 @@ public class PostsView extends PageView {
         StringBuilder builder = new StringBuilder();
         builder.append("<div class=\"header\"><p>Это типо посты</p>");
         builder.append("<a href=\"/\" class=\"button\">Home</a></div><div class=\"block\"><div class=\"posts\">");
-        for (Post post : model.getPosts()) {
+        for (PostModel post : model.getPosts()) {
             builder.append("<a href=\"/post/").append(post.getId()).append("\">");
             builder.append("<div class=\"post\">\n");
             builder.append("<h1 class=\"title\">").append(post.getTitle()).append("</h1>\n");
@@ -34,4 +34,5 @@ public class PostsView extends PageView {
                 "</form></div>");
         return builder.toString();
     }
+
 }

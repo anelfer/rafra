@@ -1,36 +1,32 @@
 package com.anelfer.rafra.core.controller;
 
+import com.anelfer.rafra.AppConfig;
 import com.anelfer.rafra.core.Route;
-import com.anelfer.rafra.core.model.PostModel;
-import com.anelfer.rafra.core.reader.mocking.FakeReader;
 import com.anelfer.rafra.core.view.PostView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @Route("/post/.*")
-public class PostController implements Controller {
+public class PostController extends Controller {
 
     @Override
-    public void executeGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String[] split = request.getRequestURI().split("/");
+    public String getHandler(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        String[] split = req.getRequestURI().split("/");
         if (split.length < 3) {
-            response.sendRedirect("/posts");
-            return;
+            resp.sendRedirect("/posts");
+            return "";
         }
-        int id = Integer.parseInt(split[2]);
-        PostModel model = new PostModel(FakeReader.instance, id);
-        PostView view = new PostView(model);
-        response.setContentType("text/html; charset=utf-8");
-        PrintWriter printWriter = response.getWriter();
-        printWriter.write(view.render("Пост №" + id, "post"));
-        printWriter.close();
+
+        try {
+            int id = Integer.parseInt(split[2]);
+            PostView view = new PostView(AppConfig.postDao.get(id));
+            return view.render("Пост №" + id, "post");
+        } catch (Exception e) {
+            sendServerError(req, resp);
+        }
+        return "";
     }
 
-    @Override
-    public void executePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-    }
 }

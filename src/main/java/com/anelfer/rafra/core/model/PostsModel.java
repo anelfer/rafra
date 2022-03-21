@@ -1,23 +1,20 @@
 package com.anelfer.rafra.core.model;
 
-import com.anelfer.rafra.core.reader.DataReader;
-import com.anelfer.rafra.data.Post;
+import com.anelfer.rafra.AppConfig;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostsModel extends Model {
 
-    private final DataReader reader;
+    private final List<PostModel> posts = new ArrayList<>();
 
-    public PostsModel(DataReader reader) {
-        this.reader = reader;
+    public PostsModel() {
+        posts.addAll(AppConfig.postDao.getAll());
     }
 
-    public void addPost(String title, String author, String text) {
-        reader.addPost(new Post(title, author, text));
+    public List<PostModel> getPosts() {
+        return posts;
     }
 
-    public List<Post> getPosts() {
-        return reader.getPosts();
-    }
 }

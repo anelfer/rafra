@@ -5,23 +5,14 @@ import com.anelfer.rafra.core.view.MainView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 @Route()
-public class MainController implements Controller {
+public class MainController extends Controller {
 
     @Override
-    public void executeGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String getHandler(HttpServletRequest request, HttpServletResponse response) {
         MainView view = new MainView();
-        response.setContentType("text/html; charset=utf-8");
-        PrintWriter printWriter = response.getWriter();
-        printWriter.write(view.render("Rafra", "main"));
-        printWriter.close();
+        return view.render("Rafra", "main");
     }
 
-    @Override
-    public void executePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-    }
 }

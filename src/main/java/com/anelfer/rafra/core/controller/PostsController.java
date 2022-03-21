@@ -1,34 +1,30 @@
 package com.anelfer.rafra.core.controller;
 
+import com.anelfer.rafra.AppConfig;
 import com.anelfer.rafra.core.Route;
+import com.anelfer.rafra.core.model.PostModel;
 import com.anelfer.rafra.core.model.PostsModel;
-import com.anelfer.rafra.core.reader.mocking.FakeReader;
 import com.anelfer.rafra.core.view.PostsView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @Route("/posts")
-public class PostsController implements Controller {
+public class PostsController extends Controller {
 
     @Override
-    public void executeGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PostsModel model = new PostsModel(FakeReader.instance);
+    public String getHandler(HttpServletRequest request, HttpServletResponse response) {
+        PostsModel model = new PostsModel();
         PostsView view = new PostsView(model);
-        response.setContentType("text/html; charset=utf-8");
-        PrintWriter printWriter = response.getWriter();
-        printWriter.write(view.render("Тут посты", "style"));
-        printWriter.close();
+        return view.render("Тут посты", "style");
     }
 
     @Override
-    public void executePost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void postHandler(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.sendRedirect("/posts");
-        PostsModel model = new PostsModel(FakeReader.instance);
-        request.setCharacterEncoding("UTF-8");
-        model.addPost(request.getParameter("title"), request.getParameter("text"), request.getParameter("author"));
+        AppConfig.postDao.add(
+                new PostModel(request.getParameter("title"), request.getParameter("text"), request.getParameter("author")));
     }
 
 }

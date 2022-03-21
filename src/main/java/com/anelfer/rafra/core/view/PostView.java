@@ -1,7 +1,6 @@
 package com.anelfer.rafra.core.view;
 
 import com.anelfer.rafra.core.model.PostModel;
-import com.anelfer.rafra.data.Post;
 
 public class PostView extends PageView {
 
@@ -13,18 +12,16 @@ public class PostView extends PageView {
 
     @Override
     public String showContent() {
-        StringBuilder builder = new StringBuilder();
-        Post post = model.getPost();
-        builder.append("<h1>").append(post.getTitle()).append("</h1>");
-        builder.append("<div class=\"post\">\n");
-        builder.append("<p>").append(post.getText()).append("</p>\n");
-        builder.append("<p>").append(post.getAuthor()).append("</p>\n");
-        builder.append("<p>").append(post.getId()).append("</p>\n");
-        builder.append("</div>");
-        builder.append("<a href=\"/posts\"><div class=\"arrow\">\n" +
+        return "<h1>" + model.getTitle() + "</h1>" +
+                "<div class=\"post\">\n" +
+                "<p>" + model.getText() + "</p>\n" +
+                "<p>" + model.getAuthor() + "</p>\n" +
+                "<p>" + model.getId() + "</p>\n" +
+                "</div>" +
+                "<a href=\"/posts\"><div class=\"arrow\">\n" +
                 "  <div class=\"arrow-top\"></div>\n" +
                 "  <div class=\"arrow-bottom\"></div>\n" +
-                "</div></a>");
-        return builder.toString();
+                "</div></a>";
     }
+
 }

@@ -26,4 +26,5 @@ public class MainView extends PageView {
                 "  </ul>\n" +
                 "</div>";
     }
+
 }
