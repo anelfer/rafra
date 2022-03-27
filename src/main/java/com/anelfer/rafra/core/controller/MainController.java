@@ -1,6 +1,7 @@
 package com.anelfer.rafra.core.controller;
 
 import com.anelfer.rafra.core.Route;
+import com.anelfer.rafra.core.model.MainModel;
 import com.anelfer.rafra.core.view.MainView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ public class MainController extends Controller {
 
     @Override
     public String getHandler(HttpServletRequest request, HttpServletResponse response) {
-        MainView view = new MainView();
+        MainView view = new MainView(new MainModel(request.getCookies()));
         return view.render("Rafra", "main");
     }
 

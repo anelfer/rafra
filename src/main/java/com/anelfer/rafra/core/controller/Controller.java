@@ -1,12 +1,19 @@
 package com.anelfer.rafra.core.controller;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@Getter
+@Setter
 public abstract class Controller {
+
+    private boolean logins = false;
 
     public void executeGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");

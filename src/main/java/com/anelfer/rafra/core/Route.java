@@ -11,4 +11,6 @@ public @interface Route {
 
     String value() default "/";
 
+    boolean auth() default false;
+
 }

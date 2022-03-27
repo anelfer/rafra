@@ -55,6 +55,15 @@ label[for="ham-menu"] {
     border: 2px solid var(--border-color);
 }
 
+.login {
+    display: flex;
+    justify-content: right;
+    font-size: 2em;
+    text-decoration: none;
+    font-family: sans-serif;
+    margin-right: 10px;
+}
+
 .fm_wrapper {
     position: absolute;
     top: 50%;
